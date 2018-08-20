@@ -3,9 +3,11 @@ FROM node:8.11.1
 RUN yarn global add sbpak
 ADD ./packed.pak /opt/
 
-SHELL ["/bin/bash", "-c"]
+RUN apt-get update
+RUN apt-get install dos2unix
 
 WORKDIR /opt/
 RUN mkdir ./StarboundAssets
-RUN sbpak unpack ./packed.pak ./StarboundAssets
+RUN dos2unix -F /usr/local/bin/sbpak
+RUN sbpak unpack ./packed.pak ./StarboundAssets/
 RUN rm packed.pak
