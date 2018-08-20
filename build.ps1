@@ -1,1 +1,1 @@
-docker build -t="sbmod-docker"
+docker build -t="sbmod-docker" .
