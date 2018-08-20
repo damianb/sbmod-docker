@@ -1,6 +1,6 @@
 FROM node:8.11.1
 
-RUN yarn global add git+ssh://gitlab.nebula.local/smtk/sbpak.git#master
+RUN yarn global add sbpak
 ADD ./packed.pak /opt/
 
 WORKDIR /opt/
